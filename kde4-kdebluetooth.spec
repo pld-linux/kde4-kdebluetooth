@@ -8,7 +8,7 @@ Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
 Version:	0.3
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kde-bluetooth/%{origname}-%{version}.tar.bz2
@@ -19,9 +19,8 @@ BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
 BuildRequires:	automoc4
-BuildRequires:	cmake
-#BuildRequires:	hgw
-BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}
+BuildRequires:	cmake >= 2.6.2
+BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}-5
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
