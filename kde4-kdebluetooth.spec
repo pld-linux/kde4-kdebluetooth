@@ -1,19 +1,20 @@
 
 %define		qtver	4.4.3
 %define		kde4ver	4.2.0
-%define		snap	svn906753
+%define		snap	svn1014227
 %define		origname	kdebluetooth4
 
 Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
 Version:	0.3
-Release:	3
+Release:	3.%{snap}
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/kde-bluetooth/%{origname}-%{version}.tar.bz2
-# Source0-md5:	e37438e8e597abe9c684acaf3aa1bb39
-#Source0:	%{name}-%{version}-%{snap}.tar.bz2
+#Source0:	http://dl.sourceforge.net/kde-bluetooth/%{origname}-%{version}.tar.bz2
+# get via: svn co svn://anonsvn.kde.org/home/kde/trunk/playground/network/kbluetooth4
+Source0:	%{origname}-%{snap}.tar.bz2
+# Source0-md5:	144687259bdea6c3e8b33622db79ad04
 URL:		http://bluetooth.kmobiletools.org/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
@@ -40,7 +41,7 @@ telefonami komórkowymi z Bluetooth oraz PDA tak bezpośrednio jak to
 jest możliwe.
 
 %prep
-%setup -q -n %{origname}-%{version}
+%setup -q -n %{origname}
 
 %build
 install -d build
@@ -74,4 +75,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/kde4/kdebluetooth4.desktop
-%{_iconsdir}/hicolor/*/apps/kbluetooth4.png
+%{_iconsdir}/hicolor/*/apps/kbluetooth4*.png
