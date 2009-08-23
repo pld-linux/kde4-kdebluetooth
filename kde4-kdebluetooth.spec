@@ -25,6 +25,7 @@ BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}-5
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
+Requires:	obex-data-server
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
