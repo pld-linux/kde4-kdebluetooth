@@ -8,7 +8,7 @@ Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
 Version:	0.4
-Release:	1.%{svnsnap}
+Release:	1.%{svnsnap}.1
 License:	GPL
 Group:		X11/Applications
 #Source0:	http://dl.sourceforge.net/kde-bluetooth/%{origname}-%{version}.tar.bz2
@@ -75,6 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog TODO
-%attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/kde4/kdebluetooth4.desktop
-%{_iconsdir}/hicolor/*/apps/kbluetooth4*.png
+%attr(755,root,root) %{_bindir}/%{orgname}*
+%{_desktopdir}/kde4/%{orgname}.desktop
+%{_iconsdir}/hicolor/*/apps/%{orgname}*.png
