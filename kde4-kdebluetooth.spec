@@ -19,6 +19,8 @@ URL:		http://bluetooth.kmobiletools.org/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
+BuildRequires:	QtNetwork-devel
+BuildRequires:	QtSvg-devel
 BuildRequires:	automoc4
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}-5
