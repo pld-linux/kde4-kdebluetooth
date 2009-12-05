@@ -1,6 +1,6 @@
 
 %define		qtver	4.6.0
-%define		kde4ver	4.3.0
+%define		kde4ver	4.3.80
 %define		svnsnap	1058941
 %define		orgname	kbluetooth
 
