@@ -20,7 +20,7 @@ BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
 BuildRequires:	automoc4
-BuildRequires:	cmake >= 2.6.2
+BuildRequires:	cmake >= 2.6.3
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}-5
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
 BuildRequires:	qt4-build >= %{qtver}
