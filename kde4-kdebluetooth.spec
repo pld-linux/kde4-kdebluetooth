@@ -25,7 +25,7 @@ BuildRequires:	automoc4
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
-BuildRequires:	kde4-kdelibs-experimental >= %{kde4ver}
+BuildRequires:	kde4-kdelibs-experimental-devel >= %{kde4ver}
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	shared-desktop-ontologies-devel >= 0.2
