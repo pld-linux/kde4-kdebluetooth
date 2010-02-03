@@ -1,6 +1,6 @@
 
-%define		qtver	4.6.0
-%define		kde4ver	4.3.4
+%define		qtver	4.6.1
+%define		kde4ver	4.3.5
 %define		svnsnap	1073043
 %define		orgname	kbluetooth
 
@@ -21,7 +21,7 @@ BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
 BuildRequires:	QtNetwork-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
-BuildRequires:	automoc4
+BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
