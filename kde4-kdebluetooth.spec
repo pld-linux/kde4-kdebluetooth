@@ -1,20 +1,20 @@
 
-%define		qtver	4.6.1
-%define		kde4ver	4.3.5
+%define		qtver	4.6.2
+%define		kde4ver	4.4.0
 %define		svnsnap	1073043
 %define		orgname	kbluetooth
 
 Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
-Version:	0.4
-Release:	1.%{svnsnap}.1
+Version:	0.4.2
+Release:	1
 License:	GPL
 Group:		X11/Applications
-#Source0:	http://dl.sourceforge.net/kde-bluetooth/%{origname}-%{version}.tar.bz2
+Source0:	http://opendesktop.org/CONTENT/content-files/112110-%{orgname}-%{version}.tar.bz2
+# Source0-md5:	f64e2c0133bc76aa119a5d453d760851
 # get via: svn co svn://anonsvn.kde.org/home/kde/trunk/playground/network/kbluetooth
-Source0:	%{orgname}-%{version}-%{svnsnap}.tar.bz2
-# Source0-md5:	af24ae1e8d4bbbbc6e21170c8183ef48
+#Source0:	%{orgname}-%{version}-%{svnsnap}.tar.bz2
 URL:		http://bluetooth.kmobiletools.org/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
@@ -22,14 +22,13 @@ BuildRequires:	QtGui-devel >= %{qtver}
 BuildRequires:	QtNetwork-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
-BuildRequires:	cmake >= 2.6.2
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
-BuildRequires:	kde4-kdelibs-experimental-devel >= %{kde4ver}
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	shared-desktop-ontologies-devel >= 0.2
-BuildRequires:	soprano-devel >= 2.3.1
+BuildRequires:	soprano-devel >= 2.4.0.1
 Requires:	obex-data-server
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +46,7 @@ telefonami komórkowymi z Bluetooth oraz PDA tak bezpośrednio jak to
 jest możliwe.
 
 %prep
-%setup -q -n %{orgname}-%{version}-%{svnsnap}
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -70,15 +69,20 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
+%find_lang %{orgname} --all-name
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files
+%files -f %{orgname}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog TODO
-%attr(755,root,root) %{_bindir}/%{orgname}*
-%{_desktopdir}/kde4/%{orgname}.desktop
-%{_iconsdir}/hicolor/*/apps/%{orgname}*.png
+%attr(755,root,root) %{_bindir}/kbluetooth
+%attr(755,root,root) %{_bindir}/kbluetooth-devicemanager
+%attr(755,root,root) %{_bindir}/kbluetooth-inputwizard
+%{_desktopdir}/kde4/kbluetooth.desktop
+%{_iconsdir}/hicolor/*/apps/kbluetooth.png
+%{_iconsdir}/hicolor/*/apps/kbluetooth-flashing.png
