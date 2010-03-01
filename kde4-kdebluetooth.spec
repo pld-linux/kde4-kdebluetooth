@@ -1,6 +1,6 @@
 
 %define		qtver	4.6.2
-%define		kde4ver	4.4.0
+%define		kde4ver	4.4.1
 %define		svnsnap	1073043
 %define		orgname	kbluetooth
 
@@ -8,7 +8,7 @@ Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://opendesktop.org/CONTENT/content-files/112110-%{orgname}-%{version}.tar.bz2
