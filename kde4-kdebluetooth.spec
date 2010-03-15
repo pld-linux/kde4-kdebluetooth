@@ -31,6 +31,7 @@ BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	shared-desktop-ontologies-devel >= 0.2
 BuildRequires:	soprano-devel >= 2.4.0.1
 Requires:	obex-data-server
+Requires:	bluez
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
