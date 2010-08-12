@@ -1,20 +1,20 @@
 
-%define		qtver	4.6.2
-%define		kde4ver	4.4.1
-%define		svnsnap	1073043
+%define		qtver	4.6.3
+%define		kde4ver	4.5.0
+%define		svnsnap	1162777
 %define		orgname	kbluetooth
 
 Summary:	KDE Bluetooth framework
 Summary(pl.UTF-8):	Podstawowe środowisko KDE Bluetooth
 Name:		kde4-kdebluetooth
-Version:	0.4.2
-Release:	2
+Version:	1.0
+Release:	0.%{svnsnap}.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://opendesktop.org/CONTENT/content-files/112110-%{orgname}-%{version}.tar.bz2
-# Source0-md5:	f64e2c0133bc76aa119a5d453d760851
+#Source0:	http://opendesktop.org/CONTENT/content-files/112110-%{orgname}-%{version}.tar.bz2
 # get via: svn co svn://anonsvn.kde.org/home/kde/trunk/playground/network/kbluetooth
-#Source0:	%{orgname}-%{version}-%{svnsnap}.tar.bz2
+Source0:	%{orgname}-%{version}-%{svnsnap}.tar.bz2
+# Source0-md5:	834c93a3adb8d340c1cc03d701b5b476
 URL:		http://bluetooth.kmobiletools.org/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
@@ -48,7 +48,7 @@ telefonami komórkowymi z Bluetooth oraz PDA tak bezpośrednio jak to
 jest możliwe.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}-%{svnsnap}
 
 %build
 install -d build
@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-%find_lang %{orgname} --all-name
+#%find_lang %{orgname} --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -79,12 +79,14 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{orgname}.lang
+#%%files -f %{orgname}.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/kbluetooth
 %attr(755,root,root) %{_bindir}/kbluetooth-devicemanager
-%attr(755,root,root) %{_bindir}/kbluetooth-inputwizard
+%attr(755,root,root) %{_bindir}/kbluetooth-wizard
 %{_desktopdir}/kde4/kbluetooth.desktop
+%{_datadir}/apps/kbluetooth-wizard
 %{_iconsdir}/hicolor/*/apps/kbluetooth.png
 %{_iconsdir}/hicolor/*/apps/kbluetooth-flashing.png
