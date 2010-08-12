@@ -15,7 +15,7 @@ Group:		X11/Applications
 # get via: svn co svn://anonsvn.kde.org/home/kde/trunk/playground/network/kbluetooth
 Source0:	%{orgname}-%{version}-%{svnsnap}.tar.bz2
 # Source0-md5:	834c93a3adb8d340c1cc03d701b5b476
-URL:		http://bluetooth.kmobiletools.org/
+URL:		http://techbase.kde.org/Kbluetooth
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
