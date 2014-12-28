@@ -23,7 +23,7 @@ BuildRequires:	QtNetwork-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	cmake >= 2.8.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kde4ver}
 BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
 BuildRequires:	qt4-build >= %{qtver}
